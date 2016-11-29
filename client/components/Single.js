@@ -1,18 +1,18 @@
 import React from 'react';
-import Photo from './Photo';
-import Comments from './Comments';
+import Station from './Station';
+import Trains from './Trains';
 
 
 const Single = React.createClass({
   render() {
-    const { postId } = this.props.params;
-    const i = this.props.posts.findIndex((post) => post.code === postId);
-    const post = this.props.posts[i];
-    const postComments = this.props.comments[postId] || [];
+    const { stationCode } = this.props.params;
+    const i = this.props.stations.Stations.findIndex((station) => station.Code === stationCode);
+    const station = this.props.stations.Stations[i];
+    const stationTrains = this.props.trains.Trains.filter((station) => station.LocationCode === stationCode);
     return(
       <div className="single-photo">
-        <Photo i={i} post={post} {...this.props} />
-        <Comments postComments={postComments} {...this.props} />
+        <Station i={i} station={station} {...this.props} />
+        <Trains stationTrains={stationTrains} {...this.props} />
       </div>
     )
   }

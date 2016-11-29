@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     
-    './client/reduxstagram'
+    './client/wmata_react_redux'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
